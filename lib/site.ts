@@ -22,6 +22,7 @@ export const brand = {
 
 export const navItems = [
   { href: "/features", label: "Features" },
+  { href: "/layout", label: "Layout" },
   { href: "/pricing", label: "Pricing" },
   { href: "/support", label: "Support" }
 ];
