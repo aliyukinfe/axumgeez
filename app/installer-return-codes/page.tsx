@@ -33,6 +33,49 @@ const returnCodes = [
   }
 ];
 
+const standardScenarios = [
+  {
+    scenario: "Installation cancelled by user",
+    value: "2, 5",
+    note: "Use 2 when cancelled before installation starts. Use 5 when cancelled during installation or aborted from an Abort/Retry/Ignore dialog."
+  },
+  {
+    scenario: "Application already exists",
+    value: "No distinct code",
+    note: "AxumGeez allows reinstall/upgrade. The installer does not emit a separate already-installed code."
+  },
+  {
+    scenario: "Installation already in progress",
+    value: "No distinct code",
+    note: "The current installer does not emit a separate concurrent-install code."
+  },
+  {
+    scenario: "Disk space is full",
+    value: "4",
+    note: "Treated as a fatal error during the actual installation process."
+  },
+  {
+    scenario: "Reboot required",
+    value: "3010, 8",
+    note: "Use 3010 for a successful install requiring restart with /RESTARTEXITCODE=3010. Use 8 when setup cannot proceed until Windows is restarted."
+  },
+  {
+    scenario: "Network failure",
+    value: "Not applicable",
+    note: "AxumGeez is a standalone offline installer and does not download components during setup."
+  },
+  {
+    scenario: "Package rejected during installation",
+    value: "Not applicable",
+    note: "Security policy rejection is handled by Windows or Microsoft Store before/during installer launch, not by the AxumGeez installer."
+  },
+  {
+    scenario: "Installation successful",
+    value: "0",
+    note: "Setup completed successfully."
+  }
+];
+
 export const metadata: Metadata = {
   title: "Installer Return Codes | AxumGeez",
   description: "AxumGeez Windows installer return code documentation for Microsoft Store submission."
@@ -53,11 +96,38 @@ export default function InstallerReturnCodesPage() {
           <div className="mt-8 rounded-2xl border border-line bg-surface-light p-5">
             <h2 className="text-lg font-black text-ink">Microsoft Store installer parameters</h2>
             <code className="mt-3 block overflow-x-auto rounded-xl bg-ink px-4 py-3 text-sm font-bold text-white">
-              /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /MERGETASKS=&quot;!desktopicon,!autostart&quot;
+              /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /RESTARTEXITCODE=3010 /SP- /MERGETASKS=&quot;!desktopicon,!autostart&quot;
             </code>
           </div>
 
           <div className="mt-10 overflow-hidden rounded-2xl border border-line">
+            <div className="border-b border-line bg-surface-light px-4 py-4">
+              <h2 className="text-xl font-black text-ink">Standard Microsoft Store install scenarios</h2>
+            </div>
+            <table className="w-full border-collapse text-left text-sm">
+              <thead className="bg-ink text-white">
+                <tr>
+                  <th className="px-4 py-3 font-black">Scenario</th>
+                  <th className="px-4 py-3 font-black">EXE return code value</th>
+                  <th className="px-4 py-3 font-black">Notes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line bg-white">
+                {standardScenarios.map((item) => (
+                  <tr key={item.scenario}>
+                    <td className="px-4 py-4 font-bold text-ink">{item.scenario}</td>
+                    <td className="whitespace-nowrap px-4 py-4 font-black text-blue-primary">{item.value}</td>
+                    <td className="px-4 py-4 leading-6 text-ink/68">{item.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-line">
+            <div className="border-b border-line bg-surface-light px-4 py-4">
+              <h2 className="text-xl font-black text-ink">Inno Setup return codes</h2>
+            </div>
             <table className="w-full border-collapse text-left text-sm">
               <thead className="bg-ink text-white">
                 <tr>
