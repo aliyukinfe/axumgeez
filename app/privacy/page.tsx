@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           <h2>Offline use</h2>
           <p>The desktop app is designed to allow temporary offline use. Some future activation checks may require occasional connection.</p>
           <h2>Contact</h2>
-          <p>For privacy questions, contact support@axumgeez.com.</p>
+          <p>For privacy questions, contact support@adischat.com.</p>
         </div>
       </article>
     </main>

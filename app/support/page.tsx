@@ -19,7 +19,7 @@ export default function SupportPage() {
           <h1 className="mt-3 text-4xl font-black text-ink sm:text-5xl">We can help you type with confidence.</h1>
           <p className="mt-5 text-lg leading-8 text-ink/68">Send a message about installation, typing behavior, activation, or keyboard layout questions.</p>
           <div className="mt-8 space-y-4 text-sm font-semibold text-ink/72">
-            <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-blue-primary" aria-hidden="true" /> support@axumgeez.com</p>
+            <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-blue-primary" aria-hidden="true" /> support@adischat.com</p>
             <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-blue-primary" aria-hidden="true" /> Phone support coming soon</p>
           </div>
         </div>

@@ -8,7 +8,7 @@ import { brand } from "@/lib/site";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://axumgeez.com"),
+  metadataBase: new URL("https://axumgeez.adischat.com"),
   title: {
     default: "AxumGeez | Smart Amharic typing software for Windows",
     template: "%s | AxumGeez"
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AxumGeez",
     description: "Smart Amharic typing software for Windows.",
-    url: "https://axumgeez.com",
+    url: "https://axumgeez.adischat.com",
     siteName: "AxumGeez",
     images: [{ url: "/brand/og-image.png", width: 1200, height: 630, alt: "AxumGeez website preview" }],
     locale: "en_US",
