@@ -13,9 +13,9 @@ export function Header() {
             <span className="block text-xs font-semibold text-blue-primary">{brand.name}</span>
           </span>
         </Link>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-4 lg:flex" aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-semibold text-ink/72 transition-colors hover:text-blue-primary">
+            <Link key={item.href} href={item.href} className="text-xs font-bold text-ink/72 transition-colors hover:text-blue-primary xl:text-sm">
               {item.label}
             </Link>
           ))}
@@ -28,7 +28,7 @@ export function Header() {
           Download
         </Link>
       </div>
-      <nav className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 pb-3 md:hidden" aria-label="Mobile navigation">
+      <nav className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 pb-3 lg:hidden" aria-label="Mobile navigation">
         {navItems.map((item) => (
           <Link key={item.href} href={item.href} className="shrink-0 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-ink/72 transition-colors hover:border-blue-primary hover:text-blue-primary">
             {item.label}

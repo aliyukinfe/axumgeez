@@ -1,14 +1,5 @@
 import Link from "next/link";
-import { brand } from "@/lib/site";
-
-const links = [
-  { href: "/download", label: "Download" },
-  { href: "/features", label: "Features" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/support", label: "Support" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" }
-];
+import { brand, navItems } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -21,7 +12,7 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-white/74">
-          {links.map((link) => (
+          {navItems.map((link) => (
             <Link key={link.href} href={link.href} className="transition-colors hover:text-white">
               {link.label}
             </Link>

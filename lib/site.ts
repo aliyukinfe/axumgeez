@@ -21,10 +21,14 @@ export const brand = {
 };
 
 export const navItems = [
+  { href: "/", label: "Home" },
   { href: "/features", label: "Features" },
-  { href: "/layout", label: "Layout" },
+  { href: "/layout", label: "Keyboard Layout" },
+  { href: "/download", label: "Download" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/support", label: "Support" }
+  { href: "/support", label: "Support" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" }
 ];
 
 export const featureCards = [
