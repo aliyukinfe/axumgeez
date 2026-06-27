@@ -16,9 +16,9 @@ export default function PrivacyPage() {
           <h2>Information we may collect</h2>
           <p>Future activation services may use a hashed device fingerprint, app version, license status, and validation timestamps. Raw hardware identifiers should not be stored.</p>
           <h2>How information is used</h2>
-          <p>License information is used for activation, subscription status, device transfer, and anti-copy protection.</p>
+          <p>License information may be used for activation, device transfer, and anti-copy protection.</p>
           <h2>Offline use</h2>
-          <p>The desktop app is designed to allow temporary offline use. Future subscription validation may require periodic connection.</p>
+          <p>The desktop app is designed to allow temporary offline use. Some future activation checks may require occasional connection.</p>
           <h2>Contact</h2>
           <p>For privacy questions, contact support@axumgeez.com.</p>
         </div>

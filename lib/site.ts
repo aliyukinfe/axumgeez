@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Sparkles,
   Type,
-  WalletCards,
   Workflow
 } from "lucide-react";
 
@@ -25,7 +24,6 @@ export const navItems = [
   { href: "/features", label: "Features" },
   { href: "/layout", label: "Keyboard Layout" },
   { href: "/download", label: "Download" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/support", label: "Support" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" }
@@ -49,12 +47,12 @@ export const featureCards = [
   },
   {
     title: "Secure activation",
-    body: "Future-ready one-device activation protects your copy while keeping the installer free to download.",
+    body: "Free for now, with friendly one-device protection planned for future releases.",
     icon: ShieldCheck
   },
   {
     title: "Offline allowance",
-    body: "Designed for temporary offline use with periodic license validation when subscription mode is enabled.",
+    body: "Designed for temporary offline use so typing stays practical even without a constant connection.",
     icon: CloudOff
   },
   {
@@ -65,46 +63,15 @@ export const featureCards = [
 ];
 
 export const securityItems = [
-  { title: "Free download", body: "Download and install AxumGeez without payment during the free phase.", icon: BadgeCheck },
+  { title: "Free for now", body: "Download and install AxumGeez without payment while the first public version is available.", icon: BadgeCheck },
   { title: "One-device protection", body: "Signed license tokens are bound to each registered computer.", icon: LockKeyhole },
-  { title: "Subscription ready", body: "Existing installs can move to future paid plans without reinstalling.", icon: WalletCards }
+  { title: "No packages to choose", body: "There are no setup packages on the website right now. Just download and start typing.", icon: ShieldCheck }
 ];
 
 export const howItWorks = [
   { title: "Download", body: "Get the Windows installer from the download page.", icon: FileText },
   { title: "Install", body: "Run the setup and launch AxumGeez from the taskbar tray.", icon: Workflow },
   { title: "Start typing", body: "Toggle Amharic mode and type Unicode fidels wherever Windows accepts text.", icon: Sparkles }
-];
-
-export const plans = [
-  {
-    name: "Free",
-    price: "Free now",
-    description: "Basic Amharic typing for Windows during the free phase.",
-    features: ["System-wide Unicode typing", "Keyboard layout help", "Taskbar tray control", "Offline-ready app design"],
-    featured: true
-  },
-  {
-    name: "Monthly",
-    price: "Coming soon",
-    description: "Flexible access for premium typing services.",
-    features: ["Premium typing services", "Cloud dictionary sync", "Priority updates"],
-    featured: false
-  },
-  {
-    name: "Yearly",
-    price: "Coming soon",
-    description: "Best value for long-term AxumGeez users.",
-    features: ["Everything in Monthly", "Theme sync", "Backup settings"],
-    featured: false
-  },
-  {
-    name: "Lifetime",
-    price: "Coming soon",
-    description: "One-time access option planned for future release.",
-    features: ["Lifetime activation", "Multiple layouts", "Priority updates"],
-    featured: false
-  }
 ];
 
 export const faqs = [
@@ -118,7 +85,7 @@ export const faqs = [
   },
   {
     question: "Can I use it offline?",
-    answer: "The app is designed for offline typing. Future subscription validation allows temporary offline use."
+    answer: "The app is designed for offline typing. Some future activation checks may require occasional connection."
   },
   {
     question: "Can I move it to another computer?",

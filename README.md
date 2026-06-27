@@ -8,7 +8,6 @@ Modern landing website for AxumGeez, built with Next.js 14 App Router, React, Ty
 - `/features`
 - `/layout` Keyboard Layout with searchable main fidels, extended fidels, Ge'ez punctuation, and Ge'ez numbers
 - `/download`
-- `/pricing`
 - `/support`
 - `/privacy`
 - `/terms`

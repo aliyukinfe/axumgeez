@@ -63,7 +63,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Security" title="Free download, ready for protected licensing" description="The app is designed for friendly one-device protection and future subscriptions without forcing users to reinstall.">
+      <Section eyebrow="Free for now" title="Download AxumGeez and start typing" description="There are no packages to choose from right now. Install the Windows app and use the keyboard layout reference whenever you need it.">
         <div className="grid gap-5 md:grid-cols-3">
           {securityItems.map((item) => (
             <article key={item.title} className="rounded-2xl border border-line bg-surface-light p-6">
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 text-white sm:px-6 lg:flex-row lg:items-center lg:px-8">
           <div>
             <h2 className="text-3xl font-black sm:text-4xl">Download AxumGeez for Windows</h2>
-            <p className="mt-3 max-w-2xl text-white/78">Start with basic Amharic typing today. Future premium services will activate without reinstalling.</p>
+            <p className="mt-3 max-w-2xl text-white/78">AxumGeez is free for now. Download the Windows installer and start typing Amharic/Geez everywhere.</p>
           </div>
           <Link href="/download" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-blue-primary transition-colors hover:bg-surface-light">
             Download for Windows

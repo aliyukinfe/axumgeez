@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Contact AxumGeez support and read frequently asked questions."
 };
 
-const issueTypes = ["Installation", "Typing", "Activation", "Billing", "Other"];
+const issueTypes = ["Installation", "Typing", "Activation", "Keyboard Layout", "Other"];
 
 export default function SupportPage() {
   return (
@@ -17,7 +17,7 @@ export default function SupportPage() {
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-primary">Support</p>
           <h1 className="mt-3 text-4xl font-black text-ink sm:text-5xl">We can help you type with confidence.</h1>
-          <p className="mt-5 text-lg leading-8 text-ink/68">Send a message about installation, typing behavior, activation, or future subscription questions.</p>
+          <p className="mt-5 text-lg leading-8 text-ink/68">Send a message about installation, typing behavior, activation, or keyboard layout questions.</p>
           <div className="mt-8 space-y-4 text-sm font-semibold text-ink/72">
             <p className="flex items-center gap-3"><Mail className="h-5 w-5 text-blue-primary" aria-hidden="true" /> support@axumgeez.com</p>
             <p className="flex items-center gap-3"><Phone className="h-5 w-5 text-blue-primary" aria-hidden="true" /> Phone support coming soon</p>

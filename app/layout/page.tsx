@@ -22,6 +22,14 @@ export default function KeyboardLayoutPage() {
             <p className="mt-5 text-lg leading-8 text-ink/68">
               Search every main fidel, extended fidel, Ge&apos;ez punctuation mark, and Ge&apos;ez number shortcut. The ኘ family now uses GN keys by default.
             </p>
+            <div className="mt-6 rounded-2xl border border-blue-primary/20 bg-blue-primary/5 p-5">
+              <p className="text-base font-black leading-7 text-ink">
+                ሁሉንም በትክክል ለመጻፍ ካፒታል ሌተር የሆኑትን በካፒታል ሌተር ይጠቀሙ። ቋንቋ ለመቀየር shift+alt+a መጠቀም ይችላሉ።
+              </p>
+              <p className="mt-3 text-sm font-semibold leading-6 text-ink/68">
+                Use this chart as the official AxumGeez typing layout. Uppercase letters such as H, S, T, C, P, and A are typed with Shift or Caps Lock.
+              </p>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
