@@ -11,7 +11,7 @@ const requirements = ["Windows 10 or Windows 11", "64-bit Windows recommended", 
 
 export default function DownloadPage() {
   const microsoftStoreUrl = process.env.NEXT_PUBLIC_MICROSOFT_STORE_URL;
-  const downloadUrl = microsoftStoreUrl || process.env.NEXT_PUBLIC_DOWNLOAD_URL || "/downloads/AxumGeezSetup.exe";
+  const downloadUrl = microsoftStoreUrl || process.env.NEXT_PUBLIC_DOWNLOAD_URL || "/downloads/1.0.0/AxumGeezSetup.exe";
   const downloadLabel = microsoftStoreUrl ? "Get from Microsoft Store" : "Download for Windows";
 
   return (

@@ -36,7 +36,13 @@ npm run start
 Place the Windows installer at:
 
 ```text
-public/downloads/AxumGeezSetup.exe
+public/downloads/1.0.0/AxumGeezSetup.exe
+```
+
+The Partner Center package URL for version `1.0.0` is:
+
+```text
+https://axumgeez.adischat.com/downloads/1.0.0/AxumGeezSetup.exe
 ```
 
 Set `NEXT_PUBLIC_MICROSOFT_STORE_URL` after the Microsoft Store listing is published. The Download page will then point to Microsoft Store instead of the direct installer.
