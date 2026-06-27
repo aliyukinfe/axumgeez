@@ -39,4 +39,4 @@ Place the Windows installer at:
 public/downloads/AxumGeezSetup.exe
 ```
 
-Until the installer is uploaded, the Download page shows a Coming soon note.
+Set `NEXT_PUBLIC_MICROSOFT_STORE_URL` after the Microsoft Store listing is published. The Download page will then point to Microsoft Store instead of the direct installer.
