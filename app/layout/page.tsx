@@ -46,7 +46,7 @@ export default function KeyboardLayoutPage() {
             <div className="rounded-2xl border border-line bg-surface-light p-5">
               <ListFilter className="h-5 w-5 text-blue-primary" aria-hidden="true" />
               <p className="mt-3 text-sm font-black">Instant search</p>
-              <p className="mt-2 text-sm leading-6 text-ink/64">Find mappings by Latin input or Ethiopic symbol, then copy any row.</p>
+              <p className="mt-2 text-sm leading-6 text-ink/64">Find mappings by Latin input or Ethiopic symbol without scrolling through the full chart.</p>
             </div>
           </div>
         </div>

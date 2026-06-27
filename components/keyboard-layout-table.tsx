@@ -1,40 +1,43 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Check, Copy, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import type { KeyboardRow } from "@/lib/keyboard-layout";
 
 export function KeyboardLayoutTable({ rows }: { rows: KeyboardRow[] }) {
   const [query, setQuery] = useState("");
-  const [copied, setCopied] = useState<string | null>(null);
 
   const filteredRows = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    if (!normalized) {
-      return rows;
+    const visibleRows = normalized
+      ? rows.filter((row) =>
+          [row.category, row.family, row.fidel, row.latin]
+            .filter(Boolean)
+            .some((value) => value!.toLowerCase().includes(normalized))
+        )
+      : rows;
+
+    const groups = new Map<string, KeyboardRow[]>();
+    for (const row of visibleRows) {
+      const key = `${row.category}-${row.family ?? row.category}`;
+      groups.set(key, [...(groups.get(key) ?? []), row]);
     }
 
-    return rows.filter((row) =>
-      [row.category, row.family, row.fidel, row.latin]
-        .filter(Boolean)
-        .some((value) => value!.toLowerCase().includes(normalized))
-    );
+    return Array.from(groups.entries()).map(([key, values]) => ({
+      key,
+      category: values[0].category,
+      family: values[0].family,
+      values
+    }));
   }, [query, rows]);
-
-  const copy = async (row: KeyboardRow) => {
-    await navigator.clipboard.writeText(row.fidel);
-    const key = `${row.fidel}-${row.latin}`;
-    setCopied(key);
-    window.setTimeout(() => setCopied(null), 1200);
-  };
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div className="rounded-3xl border border-line bg-white p-4 shadow-sm sm:p-6">
         <div className="flex flex-col gap-5 border-b border-line pb-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <h2 className="text-2xl font-black">Searchable layout table</h2>
-            <p className="mt-2 text-sm leading-6 text-ink/64">Search by Latin keys, Ethiopic symbol, or category. Each row includes a one-click copy button.</p>
+            <h2 className="text-2xl font-black">Keyboard reference</h2>
+            <p className="mt-2 text-sm leading-6 text-ink/64">Each fidel family is shown left to right. Search by Latin keys, Ethiopic symbol, or category.</p>
           </div>
           <label className="relative block w-full lg:max-w-sm">
             <span className="sr-only">Search keyboard layout</span>
@@ -48,38 +51,30 @@ export function KeyboardLayoutTable({ rows }: { rows: KeyboardRow[] }) {
           </label>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-2xl border border-line">
-          <div className="hidden grid-cols-[1fr_96px_1fr_120px] bg-ink px-4 py-3 text-xs font-black uppercase tracking-normal text-white md:grid">
-            <div>Category</div>
-            <div>Fidel</div>
-            <div>Typing shortcut</div>
-            <div className="text-right">Copy</div>
-          </div>
-          <div className="divide-y divide-line">
-            {filteredRows.map((row) => {
-              const key = `${row.fidel}-${row.latin}`;
-              const isCopied = copied === key;
-              return (
-                <article key={`${row.category}-${key}`} className="grid gap-3 bg-white p-4 transition-colors hover:bg-blue-primary/5 md:grid-cols-[1fr_96px_1fr_120px] md:items-center">
-                  <div>
-                    <div className="text-xs font-black uppercase tracking-normal text-blue-primary">{row.category}</div>
-                    {row.family ? <div className="mt-1 text-xs font-semibold text-ink/50">Family {row.family}</div> : null}
+        <div className="mt-6 space-y-3">
+          {filteredRows.map((group) => (
+            <article key={group.key} className="rounded-2xl border border-line bg-surface-light p-3 transition-colors hover:border-blue-primary/35">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
+                <div className="flex items-center gap-3 lg:w-44 lg:shrink-0">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-blue-primary text-2xl font-black text-white shadow-blue">
+                    {group.family ?? group.values[0].fidel}
                   </div>
-                  <div className="text-3xl font-black text-ink">{row.fidel}</div>
-                  <div className="inline-flex w-fit rounded-full bg-surface-light px-3 py-1.5 font-mono text-sm font-black text-blue-primary">{row.latin}</div>
-                  <button
-                    type="button"
-                    onClick={() => void copy(row)}
-                    className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-line px-4 text-sm font-black text-ink transition-colors hover:border-blue-primary hover:bg-blue-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-primary/20 md:justify-self-end"
-                    aria-label={`Copy ${row.fidel}`}
-                  >
-                    {isCopied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
-                    {isCopied ? "Copied" : "Copy"}
-                  </button>
-                </article>
-              );
-            })}
-          </div>
+                  <div>
+                    <div className="text-xs font-black uppercase tracking-normal text-blue-primary">{group.category}</div>
+                    {group.family ? <div className="mt-1 text-xs font-semibold text-ink/52">Family {group.family}</div> : null}
+                  </div>
+                </div>
+                <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-7">
+                  {group.values.map((row) => (
+                    <div key={`${row.category}-${row.fidel}-${row.latin}`} className="rounded-xl border border-line bg-white px-3 py-3 text-center">
+                      <div className="text-2xl font-black leading-none text-ink">{row.fidel}</div>
+                      <div className="mt-2 font-mono text-xs font-black leading-none text-blue-primary">{row.latin}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
 
         {filteredRows.length === 0 ? (
