@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Download, MonitorDown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Download",
-  description: "Download AxumGeez for Windows 10 and Windows 11."
+  title: "Download AxumGeez for Windows",
+  description: "Download AxumGeez version 1.0.0, a free Amharic and Geez typing keyboard for Windows 10 and Windows 11.",
+  alternates: {
+    canonical: "/download"
+  }
 };
 
 const requirements = ["Windows 10 or Windows 11", "64-bit Windows recommended", ".NET Desktop Runtime included by installer or installed separately", "Internet connection for future license validation"];
@@ -22,7 +25,7 @@ export default function DownloadPage() {
             <div>
               <MonitorDown className="h-12 w-12 text-blue-primary" aria-hidden="true" />
               <h1 className="mt-6 text-4xl font-black text-ink sm:text-5xl">Download AxumGeez</h1>
-              <p className="mt-4 text-lg leading-8 text-ink/68">Smart Amharic typing software for Windows 10 and Windows 11.</p>
+              <p className="mt-4 text-lg leading-8 text-ink/68">Free Amharic and Geez typing software for Windows 10 and Windows 11.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={downloadUrl} className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-primary px-6 py-3.5 font-bold text-white shadow-blue transition-colors hover:bg-blue-deep">
                   <Download className="h-5 w-5" aria-hidden="true" />

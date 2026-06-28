@@ -4,8 +4,11 @@ import { KeyboardLayoutTable } from "@/components/keyboard-layout-table";
 import { geezNumberRows, keyboardRows } from "@/lib/keyboard-layout";
 
 export const metadata: Metadata = {
-  title: "Keyboard Layout",
-  description: "Search the full AxumGeez Amharic, Geez punctuation, and Geez number keyboard layout."
+  title: "AxumGeez Keyboard Layout",
+  description: "Search the official AxumGeez keyboard layout for Amharic fidels, Geez punctuation, Ethiopic numbers, GN mappings, and Windows typing shortcuts.",
+  alternates: {
+    canonical: "/layout"
+  }
 };
 
 export default function KeyboardLayoutPage() {

@@ -4,8 +4,11 @@ import { Section } from "@/components/section";
 import { featureCards } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Features",
-  description: "Explore AxumGeez features for Amharic and Geez typing on Windows."
+  title: "AxumGeez Features",
+  description: "Explore AxumGeez features for Amharic and Geez typing on Windows, including global typing, Brana font support, offline use, and Unicode Ethiopic output.",
+  alternates: {
+    canonical: "/features"
+  }
 };
 
 export default function FeaturesPage() {

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms",
-  description: "Terms of use for AxumGeez."
+  title: "AxumGeez Terms",
+  description: "Terms of use for AxumGeez Amharic and Geez typing software for Windows.",
+  alternates: {
+    canonical: "/terms"
+  }
 };
 
 export default function TermsPage() {

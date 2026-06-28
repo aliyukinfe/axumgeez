@@ -4,15 +4,35 @@ import { faqs } from "@/lib/site";
 import { submitSupportRequest } from "./actions";
 
 export const metadata: Metadata = {
-  title: "Support",
-  description: "Contact AxumGeez support and read frequently asked questions."
+  title: "AxumGeez Support",
+  description: "Contact AxumGeez support and read frequently asked questions about Amharic typing, Word, Excel, offline use, activation, and keyboard layout.",
+  alternates: {
+    canonical: "/support"
+  }
 };
 
 const issueTypes = ["Installation", "Typing", "Activation", "Keyboard Layout", "Other"];
 
 export default function SupportPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+
   return (
     <main className="bg-surface-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-primary">Support</p>

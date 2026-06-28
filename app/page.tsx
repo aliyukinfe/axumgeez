@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowRight, Download, ShieldCheck } from "lucide-react";
 import { FeatureCard } from "@/components/card";
 import { Section } from "@/components/section";
 import { brand, featureCards, howItWorks, securityItems } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "AxumGeez Amharic Typing Software for Windows",
+  description: "AxumGeez is a free Amharic typing keyboard for Windows. Type Ethiopic Unicode text in Word, Excel, browsers, websites, chat apps, and VS Code.",
+  alternates: {
+    canonical: "/"
+  }
+};
 
 export default function HomePage() {
   return (
@@ -15,7 +24,10 @@ export default function HomePage() {
               Windows 10 / Windows 11
             </p>
             <h1 className="mt-8 text-5xl font-black tracking-normal text-ink sm:text-6xl lg:text-7xl">{brand.logo}</h1>
-            <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/70">Smart Amharic typing software for Windows</p>
+            <p className="mt-4 text-2xl font-black text-blue-primary">AxumGeez</p>
+            <p className="mt-4 max-w-2xl text-xl leading-8 text-ink/70">
+              Smart Amharic and Geez typing software for Windows. Type Unicode Ethiopic text in Word, Excel, Chrome, websites, chat apps, and VS Code.
+            </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/download" className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-primary px-6 py-3.5 font-bold text-white shadow-blue transition-colors hover:bg-blue-deep">
                 <Download className="h-5 w-5" aria-hidden="true" />
