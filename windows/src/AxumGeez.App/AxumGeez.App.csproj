@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>AxumGeez</AssemblyName>
+    <ApplicationIcon>Assets\AxumGeez.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AxumGeez.Core\AxumGeez.Core.csproj" />
+    <ProjectReference Include="..\AxumGeez.Input\AxumGeez.Input.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AxumGeez.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-16.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-24.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-32.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-48.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-64.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\axum-geez-256.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Fonts\AbyssinicaSIL-Regular.ttf" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Fonts\NotoSansEthiopic-Regular.ttf" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fonts\LICENSE-AbyssinicaSIL.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fonts\LICENSE-NotoFonts.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

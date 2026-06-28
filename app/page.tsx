@@ -87,6 +87,13 @@ export default function HomePage() {
         </div>
       </Section>
 
+      <Section eyebrow="Open source" title="Built in public" description="AxumGeez is MIT-licensed open-source software. Developers can inspect the Windows typing engine, keyboard layout, tests, installer script, and website source on GitHub.">
+        <Link href="https://github.com/aliyukinfe/axumgeez" className="inline-flex items-center justify-center gap-2 rounded-full border border-line bg-white px-6 py-3.5 font-bold text-ink transition-colors hover:border-blue-primary hover:text-blue-primary">
+          View source on GitHub
+          <ArrowRight className="h-5 w-5" aria-hidden="true" />
+        </Link>
+      </Section>
+
       <section className="bg-blue-primary">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 text-white sm:px-6 lg:flex-row lg:items-center lg:px-8">
           <div>

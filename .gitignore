@@ -7,3 +7,15 @@ dist
 *.log
 
 .vercel
+
+# .NET / Windows app build output
+bin/
+obj/
+windows/artifacts/
+windows/**/bin/
+windows/**/obj/
+
+# Signing material must never be committed
+*.pfx
+*.p12
+*.snk

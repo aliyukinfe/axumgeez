@@ -1,0 +1,36 @@
+<Window x:Class="AxumGeez.App.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Keyboard Layout"
+        Width="760"
+        Height="680"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource LightSurface}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="አክሱም ግዕዝ" FontSize="30" FontWeight="Bold" Foreground="{StaticResource BrandBlack}"/>
+            <TextBlock Text="Keyboard Layout" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource PrimaryBlue}" Margin="0,6,0,6"/>
+            <TextBlock Text="Examples: selam → ሰላም   amesegenallo → አመሰግናለሁ   etiopia → ኢትዮጵያ" Foreground="#52606D" Margin="0,0,0,8"/>
+            <TextBlock Text="External apps control their own fonts. Axum Geez only types Unicode Amharic/Geez globally." Foreground="#52606D" TextWrapping="Wrap" Margin="0,0,0,14"/>
+        </StackPanel>
+        <TextBox x:Name="SearchBox" Grid.Row="1" TextChanged="SearchChanged" />
+        <DataGrid x:Name="LayoutGrid"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  Background="{StaticResource BrandWhite}"
+                  BorderBrush="{StaticResource BrandBorder}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Latin" Binding="{Binding Key}" Width="*"/>
+                <DataGridTextColumn Header="Fidel" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

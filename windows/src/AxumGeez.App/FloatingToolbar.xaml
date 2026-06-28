@@ -1,0 +1,25 @@
+<Window x:Class="AxumGeez.App.FloatingToolbar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Axum Geez Status"
+        Width="112"
+        Height="38"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Topmost="True"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False">
+    <Border x:Name="Pill"
+            Background="{StaticResource PrimaryBlue}"
+            CornerRadius="18"
+            Padding="12,7"
+            MouseLeftButtonDown="DragToolbar">
+        <TextBlock x:Name="ModeText"
+                   Text="አማ ON"
+                   Foreground="{StaticResource BrandWhite}"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Border>
+</Window>

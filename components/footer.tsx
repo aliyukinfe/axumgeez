@@ -17,6 +17,9 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
+          <Link href="https://github.com/aliyukinfe/axumgeez" className="transition-colors hover:text-white">
+            GitHub
+          </Link>
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-sm text-white/58">

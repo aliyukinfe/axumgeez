@@ -1,20 +1,21 @@
-# AxumGeez Website
+# AxumGeez
 
-Modern landing website for AxumGeez, built with Next.js 14 App Router, React, TypeScript, and Tailwind CSS.
+AxumGeez is open-source Amharic and Geez typing software for Windows, plus the official public website at [axumgeez.adischat.com](https://axumgeez.adischat.com).
 
-## Pages
+The Windows app converts Latin keyboard input into Unicode Ethiopic fidels so users can type Amharic in Word, Excel, browsers, websites, chat apps, VS Code, and normal Windows text fields.
 
-- `/` Home
-- `/features`
-- `/layout` Keyboard Layout with searchable main fidels, extended fidels, Ge'ez punctuation, and Ge'ez numbers
-- `/download`
-- `/support`
-- `/privacy`
-- `/terms`
+## Repository Structure
 
-The Keyboard Layout page includes GN mappings for the ኘ family and dedicated Ge'ez number shortcuts such as `g1`, `g40`, `g100`, and `g10000`.
+- `app`, `components`, `lib`, `public` - Next.js website.
+- `windows` - C#/.NET 8 WPF Windows typing app, transliteration engine, input hook, tests, and Inno Setup script.
+- `LICENSE` - MIT License.
+- `CONTRIBUTING.md` - contribution guide.
+- `SECURITY.md` - security reporting policy.
+- `OPEN_SOURCE.md` - open-source project notes.
 
-## Setup
+## Website
+
+The website uses Next.js 14 App Router, React, TypeScript, and Tailwind CSS.
 
 ```bash
 npm install
@@ -23,26 +24,52 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Production
+Production checks:
 
 ```bash
 npm run lint
 npm run build
-npm run start
 ```
 
-## Download File
+## Windows App
 
-Place the Windows installer at:
+Requirements:
 
-```text
-public/downloads/1.0.0/AxumGeezSetup.exe
+- Windows 10 or Windows 11
+- .NET 8 SDK
+- Inno Setup 6, optional for installer builds
+
+Build and test:
+
+```powershell
+cd windows
+dotnet restore
+dotnet test
 ```
 
-The Partner Center package URL for version `1.0.0` is:
+Build release installer:
+
+```powershell
+cd windows
+.\build.ps1 -Configuration Release
+```
+
+## Download Package
+
+Current website package URL:
 
 ```text
 https://axumgeez.adischat.com/downloads/1.0.0/AxumGeezSetup.exe
 ```
 
-Set `NEXT_PUBLIC_MICROSOFT_STORE_URL` after the Microsoft Store listing is published. The Download page will then point to Microsoft Store instead of the direct installer.
+After Microsoft Store approval, set this environment variable in Vercel:
+
+```env
+NEXT_PUBLIC_MICROSOFT_STORE_URL=https://apps.microsoft.com/detail/YOUR_PRODUCT_ID
+```
+
+## Open Source License
+
+AxumGeez is licensed under the MIT License.
+
+Private signing certificates, service credentials, generated artifacts, and local development settings must not be committed.
