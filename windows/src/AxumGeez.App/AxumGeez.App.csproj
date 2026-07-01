@@ -8,6 +8,14 @@
     <Nullable>enable</Nullable>
     <AssemblyName>AxumGeez</AssemblyName>
     <ApplicationIcon>Assets\AxumGeez.ico</ApplicationIcon>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Product>Axum Geez</Product>
+    <Company>AdisTech Solutions</Company>
+    <Authors>AdisTech Solutions</Authors>
+    <Description>Modern Amharic and Geez typing software for Windows.</Description>
+    <Copyright>Copyright © 2026 AdisTech Solutions</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\AxumGeez.Core\AxumGeez.Core.csproj" />

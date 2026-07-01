@@ -81,7 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: "https://axumgeez.adischat.com",
     downloadUrl: "https://axumgeez.adischat.com/download",
     image: "https://axumgeez.adischat.com/brand/og-image.png",
-    softwareVersion: "1.0.0",
+    softwareVersion: "1.0.1",
     offers: {
       "@type": "Offer",
       price: "0",

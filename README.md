@@ -59,7 +59,7 @@ cd windows
 Current website package URL:
 
 ```text
-https://axumgeez.adischat.com/downloads/1.0.0/AxumGeezSetup.exe
+https://axumgeez.adischat.com/downloads/1.0.1/AxumGeezSetup.exe
 ```
 
 After Microsoft Store approval, set this environment variable in Vercel:

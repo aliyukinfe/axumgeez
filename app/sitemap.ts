@@ -8,7 +8,7 @@ const routes = [
   { path: "/features", priority: 0.9 },
   { path: "/layout", priority: 0.9 },
   { path: "/support", priority: 0.75 },
-  { path: "/installer-return-codes", priority: 0.5 },
+  { path: "/docs/installer-return-codes", priority: 0.5 },
   { path: "/privacy", priority: 0.45 },
   { path: "/terms", priority: 0.45 }
 ];

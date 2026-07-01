@@ -4,7 +4,7 @@ import { Download, MonitorDown } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Download AxumGeez for Windows",
-  description: "Download AxumGeez version 1.0.0, a free Amharic and Geez typing keyboard for Windows 10 and Windows 11.",
+  description: "Download AxumGeez version 1.0.1, a free Amharic and Geez typing keyboard for Windows 10 and Windows 11.",
   alternates: {
     canonical: "/download"
   }
@@ -14,7 +14,7 @@ const requirements = ["Windows 10 or Windows 11", "64-bit Windows recommended", 
 
 export default function DownloadPage() {
   const microsoftStoreUrl = process.env.NEXT_PUBLIC_MICROSOFT_STORE_URL;
-  const downloadUrl = microsoftStoreUrl || process.env.NEXT_PUBLIC_DOWNLOAD_URL || "/downloads/1.0.0/AxumGeezSetup.exe";
+  const downloadUrl = microsoftStoreUrl || process.env.NEXT_PUBLIC_DOWNLOAD_URL || "/downloads/1.0.1/AxumGeezSetup.exe";
   const downloadLabel = microsoftStoreUrl ? "Get from Microsoft Store" : "Download for Windows";
 
   return (
@@ -35,7 +35,7 @@ export default function DownloadPage() {
               </div>
             </div>
             <aside className="rounded-2xl bg-surface-light p-6">
-              <h2 className="text-xl font-black text-ink">Version 1.0.0</h2>
+              <h2 className="text-xl font-black text-ink">Version 1.0.1</h2>
               <p className="mt-2 text-sm leading-6 text-ink/64">Official download link updates to Microsoft Store after publishing.</p>
               <h3 className="mt-6 font-black text-ink">System requirements</h3>
               <ul className="mt-4 space-y-3 text-sm text-ink/72">
