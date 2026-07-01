@@ -1,0 +1,12 @@
+windows/
+store-assets/
+store-listing/
+scripts/
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+OPEN_SOURCE.md
+SECURITY.md
+LICENSE
+*.md
+
+!README.md
